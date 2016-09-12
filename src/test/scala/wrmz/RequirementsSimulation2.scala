@@ -26,7 +26,7 @@ class RequirementsSimulation2 extends Simulation {
   val browse = new Browse(5)
   val search = new Search(10)
 
-  val scn = scenario("Check Requirements").exec(addUsers.run, addUserBulks.run, browse.run, search.run)
+  val scn = scenario("Check Requirements 500 users").exec(addUsers.run, addUserBulks.run, browse.run, search.run)
 
   setUp(scn.inject(atOnceUsers(500)).protocols(httpConf)).assertions(
     global.responseTime.max.lessThan(2),

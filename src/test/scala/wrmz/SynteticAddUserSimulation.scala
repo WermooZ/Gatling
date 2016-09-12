@@ -20,7 +20,7 @@ class SynteticAddUserSimulation extends Simulation {
     UserNameHolder.userNames.clear()
   }
 
-  val addUsers = new AddUsers(100)
+  val addUsers = new AddUsers(10)
 
   val scn = scenario("Add Single Users").exec(addUsers.run)
 

@@ -21,7 +21,7 @@ class SynteticSearchSimulation extends Simulation {
     databasePreparer.fillDatabase(1000)
   }
 
-  val search = new Search(100)
+  val search = new Search(10)
 
   val scn = scenario("Browse Pages").exec(search.run)
 

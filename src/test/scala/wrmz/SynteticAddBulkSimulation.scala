@@ -20,7 +20,7 @@ class SynteticAddBulkSimulation extends Simulation {
     UserNameHolder.userNames.clear()
   }
 
-  val addUserBulks = new AddUserBulks(100, 100)
+  val addUserBulks = new AddUserBulks(10, 10)
 
   val scn = scenario("Add Bulk Users").exec(addUserBulks.run)
 
