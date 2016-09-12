@@ -8,7 +8,7 @@ import wrmz.utils._
 class SynteticBrowseSimulation extends Simulation {
 
   var feeder = UserFakerFeeder.feeder
-  val httpConf = http.baseURL("http://localhost:9000")
+  val httpConf = http.baseURL("http://54.78.95.58:9000")
   val databasePreparer = new DatabasePreparer()
 
   after {
@@ -18,7 +18,7 @@ class SynteticBrowseSimulation extends Simulation {
 
   before {
     UserNameHolder.userNames.clear()
-    databasePreparer.fillDatabase(1000)
+    databasePreparer.fillDatabase(10000)
   }
 
   val browse = new Browse(10)

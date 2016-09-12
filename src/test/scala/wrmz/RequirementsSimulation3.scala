@@ -5,7 +5,7 @@ import io.gatling.http.Predef._
 import wrmz.steps._
 import wrmz.utils._
 
-class RequirementsSimulation2 extends Simulation {
+class RequirementsSimulation3 extends Simulation {
 
   var feeder = UserFakerFeeder.feeder
   val httpConf = http.baseURL("http://54.78.95.58:9000")
@@ -28,7 +28,7 @@ class RequirementsSimulation2 extends Simulation {
 
   val scn = scenario("Check Requirements 500 users").exec(addUsers.run, addUserBulks.run, browse.run, search.run)
 
-  setUp(scn.inject(atOnceUsers(500)).protocols(httpConf)).assertions(
+  setUp(scn.inject(atOnceUsers(1000)).protocols(httpConf)).assertions(
     global.responseTime.max.lessThan(2),
     global.successfulRequests.percent.greaterThan(95)
   )
