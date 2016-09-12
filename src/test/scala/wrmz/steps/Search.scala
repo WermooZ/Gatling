@@ -5,7 +5,6 @@ import io.gatling.http.Predef._
 import wrmz.utils.InsertedUserNamesFeeder
 import scala.concurrent.duration._
 
-
 object Search {
   val run = exec(http("Home")
     .get("/persons/1"))
