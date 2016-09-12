@@ -2,13 +2,10 @@ package wrmz
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import io.gatling.core.session._
-import scala.concurrent.duration._
-
-import wrmz.utils._
 import wrmz.steps._
+import wrmz.utils._
 
-class RequirementsSimulation extends Simulation {
+class RequirementsSimulation2 extends Simulation {
 
   var feeder = UserFakerFeeder.feeder
   val httpConf = http.baseURL("http://localhost:9000")
@@ -31,7 +28,7 @@ class RequirementsSimulation extends Simulation {
 
   val scn = scenario("Check Requirements").exec(addUsers.run, addUserBulks.run, browse.run, search.run)
 
-  setUp(scn.inject(atOnceUsers(200)).protocols(httpConf)).assertions(
+  setUp(scn.inject(atOnceUsers(500)).protocols(httpConf)).assertions(
     global.responseTime.max.lessThan(2),
     global.successfulRequests.percent.greaterThan(95)
   )
