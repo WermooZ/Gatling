@@ -9,16 +9,15 @@ class SynteticBrowseSimulation extends Simulation {
 
   var feeder = UserFakerFeeder.feeder
   val httpConf = http.baseURL("http://54.78.95.58:9000")
-  val databasePreparer = new DatabasePreparer()
+  val utils = new Utils()
 
   after {
-    databasePreparer.clearDatabase()
     UserNameHolder.userNames.clear()
   }
 
   before {
     UserNameHolder.userNames.clear()
-    databasePreparer.fillDatabase(10000)
+    utils.resetDatabase()
   }
 
   val browse = new Browse(5)

@@ -9,15 +9,15 @@ class SynteticAddUserSimulation extends Simulation {
 
   var feeder = UserFakerFeeder.feeder
   val httpConf = http.baseURL("http://54.78.95.58:9000")
-  val databasePreparer = new DatabasePreparer()
+  val utils = new Utils()
 
   after {
-    databasePreparer.clearDatabase()
     UserNameHolder.userNames.clear()
   }
 
   before {
     UserNameHolder.userNames.clear()
+    utils.resetDatabase()
   }
 
   val addUsers = new AddUsers(10)
