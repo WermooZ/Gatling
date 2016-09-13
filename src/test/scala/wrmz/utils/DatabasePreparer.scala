@@ -6,7 +6,7 @@ import rapture.json.jsonBackends.jawn._
 import rapture.json.formatters.compact
 
 class DatabasePreparer() {
-  val url = "http://localhost:9000/persons/bulk"
+  val url = "http://54.78.95.58:9000/persons/bulk"
   val feeder = UserFakerFeeder.feeder
 
   def fillDatabase(userQuantity: Int = 250) {
@@ -25,6 +25,6 @@ class DatabasePreparer() {
   }
 
   def clearDatabase(): Unit = {
-    Http("http://localhost:9000/persons/reset")
+    Http("http://54.78.95.58:9000/persons/reset")
   }
 }

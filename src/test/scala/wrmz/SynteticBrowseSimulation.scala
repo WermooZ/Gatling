@@ -21,7 +21,7 @@ class SynteticBrowseSimulation extends Simulation {
     databasePreparer.fillDatabase(10000)
   }
 
-  val browse = new Browse(10)
+  val browse = new Browse(5)
 
   val scn = scenario("Browse Pages").exec(browse.run)
 
