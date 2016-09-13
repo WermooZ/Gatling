@@ -35,7 +35,6 @@ class AddUsers(var quantity: Int = 10) {
         .set("userName", user.name)
     })
       .exec(AddOne.run)
-      .pause(1)
       .exec(session => {
         UserNameHolder.userNames.offer(session.get("userName").as[String])
         session

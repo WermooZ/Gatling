@@ -25,5 +25,5 @@ class SynteticBrowseSimulation extends Simulation {
 
   val scn = scenario("Browse Pages").exec(browse.run)
 
-  setUp(scn.inject(atOnceUsers(500)).protocols(httpConf))
+  setUp(scn.inject(atOnceUsers(200)).protocols(httpConf))
 }

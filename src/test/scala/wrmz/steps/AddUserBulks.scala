@@ -35,7 +35,6 @@ class AddUserBulks(var bulks: Int = 10, var quantity: Int = 10) {
         .set("userNames", extractUserNames(users))
     })
       .exec(AddBulk.run)
-      .pause(1)
       .exec(session => {
         addUserNamesToStorage(session.get("userNames").as[List[String]])
         session

@@ -24,5 +24,5 @@ class SynteticAddBulkSimulation extends Simulation {
 
   val scn = scenario("Add Bulk Users").exec(addUserBulks.run)
 
-  setUp(scn.inject(atOnceUsers(500)).protocols(httpConf))
+  setUp(scn.inject(atOnceUsers(200)).protocols(httpConf))
 }
